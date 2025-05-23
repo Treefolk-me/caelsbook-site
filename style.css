@@ -63,12 +63,14 @@ h1 {
 
 .entry-content {
   display: flex;
+  flex-wrap: wrap; /* Ensures proper wrapping on smaller screens */
   gap: 40px;
-  padding: 40px 80px; /* Increase horizontal padding */
-  max-width: 1200px;   /* Limit width so text doesn't stretch too far */
+  padding: 40px 80px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
+/* Ensures text and image are in two columns on wider screens */
 .entry-text {
   flex: 2;
   min-width: 300px;
@@ -76,19 +78,26 @@ h1 {
 }
 
 .entry-image-frame {
-  flex: none; /* Prevents flex from automatically stretching */
-  width: auto;
-  height: auto; /* Ensures the frame only matches the image size */
-  padding: 10px; /* Adjust padding as needed */
-  border: 4px double #5a3e2b;
-  background-color: #f3e8ce;
+  flex: 1;
+  min-width: 250px;
+  max-width: 400px; /* Restrict max width so it's not oversized */
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* Keeps the image aligned to the top */
-  position: absolute; /* Fix the position */
-  top: 40px; /* Adjust vertical positioning */
-  right: 80px; /* Adjust horizontal positioning */
+  align-items: flex-start; /* Keep the image at the top */
+  height: auto; /* Let the image determine the frame size */
 }
+
+/* Responsive Behavior - Switch to single column under 700px */
+@media (max-width: 700px) {
+  .entry-content {
+    flex-direction: column; /* Stacks everything in one column */
+    align-items: center;
+  }
+
+  .entry-image-frame {
+    max-width: 100%;
+    order: -1; /* Moves the image ABOVE the text */
+  }
 
 .entry-image-frame img {
   max-width: 100%;
