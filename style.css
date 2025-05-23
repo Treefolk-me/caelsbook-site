@@ -80,11 +80,12 @@ h1 {
 .entry-image-frame {
   flex: 1;
   min-width: 250px;
-  max-width: 400px; /* Restrict max width so it's not oversized */
+  max-width: 400px; /* Controls maximum width */
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* Keep the image at the top */
-  height: auto; /* Let the image determine the frame size */
+  align-items: flex-start; /* Keeps the image at the top */
+  height: auto; /* Make sure it adjusts to image height */
+  overflow: hidden; /* Prevents overflow issues */
 }
 
 /* Responsive Behavior - Switch to single column under 700px */
@@ -102,7 +103,7 @@ h1 {
 .entry-image-frame img {
   max-width: 100%;
   height: auto;
-  display: block; /* Prevents extra spacing issues */
+  object-fit: contain; /* Keeps the image from expanding beyond its natural size */
 }
 
 .entry-nav {
