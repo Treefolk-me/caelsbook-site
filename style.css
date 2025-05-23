@@ -154,28 +154,16 @@ h1 {
     width: 80%;
   }
 
-  /*
+  .nav-button {
+    width: auto;       /* natural width based on content + padding */
+    max-width: none;   /* no max width limit */
+    box-sizing: border-box;
+  }
+
   .button-row {
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .nav-button {
     width: 100%;
-    max-width: 300px;
+    max-width: 320px;  /* to keep buttons container centered and consistent */
+    margin: 0 auto;
   }
-  */
-
-  .nav-button {
-  width: 100%;
-  max-width: none;
-  box-sizing: border-box;
-}
-.button-row {
-  width: 100%;
-  max-width: 320px;
-  margin: 0 auto;
-}
   
 }
