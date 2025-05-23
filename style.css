@@ -74,7 +74,8 @@ h1 {
 .entry-text {
   flex: 2;
   min-width: 300px;
-  padding: 0 15px;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
 .entry-image-frame {
@@ -86,19 +87,6 @@ h1 {
   align-items: flex-start; /* Keeps the image at the top */
   height: auto; /* Make sure it adjusts to image height */
   overflow: hidden; /* Prevents overflow issues */
-}
-
-/* Responsive Behavior - Switch to single column under 700px */
-@media (max-width: 700px) {
-  .entry-content {
-    flex-direction: column; /* Stacks everything in one column */
-    align-items: center;
-  }
-
-  .entry-image-frame {
-    max-width: 100%;
-    order: -1; /* Moves the image ABOVE the text */
-  }
 }
 
 .entry-image-frame img {
@@ -118,4 +106,29 @@ h1 {
   display: flex;
   justify-content: center; /* Makes sure it stays in the middle */
   margin-top: 30px;
+}
+
+@media (max-width: 700px) {
+  .entry-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .entry-image-frame {
+    max-width: 100%;
+    margin: 20px auto;
+    order: initial; /* REMOVE order: -1 */
+  }
+
+  .entry-image-frame img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    max-height: 300px;
+  }
+
+  .entry-text {
+    padding: 0 20px;
+    text-align: left;
+  }
 }
