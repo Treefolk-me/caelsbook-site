@@ -101,13 +101,17 @@ h1 {
   }
 
 .entry-image-frame img {
-  width: 100%; /* Forces the image to resize within the frame */
-  height: auto; /* Maintains aspect ratio */
-  max-height: 300px; /* Limits how tall it can get */
-  object-fit: cover; /* Ensures the full image is visible */
+  width: 100%;  /* Ensure it scales to fit the container */
+  height: auto; /* Maintain aspect ratio */
+  max-height: 300px; /* Limit excessive height */
+  object-fit: contain; /* Prevent cropping */
+  display: block; /* Fix extra spacing issues */
 }
 
 .entry-nav {
-  text-align: center;
+  text-align: center; /* Ensure proper alignment */
+  width: 100%; /* Keeps it centered within the page */
+  display: flex;
+  justify-content: center; /* Makes sure it stays in the middle */
   margin-top: 30px;
 }
