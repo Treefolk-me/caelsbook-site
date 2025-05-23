@@ -74,7 +74,7 @@ h1 {
 .entry-text {
   flex: 2;
   min-width: 300px;
-  padding-right: 20px;
+  padding: 0 15px;
 }
 
 .entry-image-frame {
@@ -99,13 +99,17 @@ h1 {
     max-width: 100%;
     order: -1; /* Moves the image ABOVE the text */
   }
+}
 
 .entry-image-frame img {
-  width: 100%;  /* Ensure it scales to fit the container */
-  height: auto; /* Maintain aspect ratio */
-  max-height: 300px; /* Limit excessive height */
-  object-fit: contain; /* Prevent cropping */
-  display: block; /* Fix extra spacing issues */
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+  border: 5px solid #5a3e2b;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .entry-nav {
