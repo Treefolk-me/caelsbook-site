@@ -107,6 +107,25 @@ h1 {
   margin-top: 30px;
 }
 
+.centered {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+.button-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
 /* Mobile styles */
 @media (max-width: 700px) {
   .entry-body {
@@ -134,4 +153,11 @@ h1 {
   .styled-hr {
     width: 80%;
   }
+
+  .button-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
 }
