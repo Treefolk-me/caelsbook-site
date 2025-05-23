@@ -34,15 +34,6 @@ h1 {
   border-radius: 5px;
 }
 
-.centered {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  text-align: center;
-}
-
 .nav-button {
   background-color: #d6c3a7;
   color: #3b2d20;
@@ -62,15 +53,24 @@ h1 {
 }
 
 .entry-content {
-  display: flex;
-  flex-wrap: wrap; /* Ensures proper wrapping on smaller screens */
-  gap: 40px;
   padding: 40px 80px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* Ensures text and image are in two columns on wider screens */
+.entry-header {
+  text-align: center;
+}
+
+.entry-body {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  margin-top: 30px;
+  align-items: flex-start;
+}
+
+/* Left text */
 .entry-text {
   flex: 2;
   min-width: 300px;
@@ -78,21 +78,19 @@ h1 {
   box-sizing: border-box;
 }
 
+/* Right image */
 .entry-image-frame {
   flex: 1;
-  min-width: 250px;
-  max-width: 400px; /* Controls maximum width */
+  max-width: 400px;
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* Keeps the image at the top */
-  height: auto; /* Make sure it adjusts to image height */
-  overflow: hidden; /* Prevents overflow issues */
+  align-items: flex-start;
+  overflow: hidden;
 }
 
 .entry-image-frame img {
   width: 100%;
   height: auto;
-  max-height: 100%;
   object-fit: contain;
   display: block;
   border: 5px solid #5a3e2b;
@@ -100,40 +98,40 @@ h1 {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
+/* Navigation */
 .entry-nav {
-  text-align: center; /* Ensure proper alignment */
-  width: 100%; /* Keeps it centered within the page */
+  text-align: center;
+  width: 100%;
   display: flex;
-  justify-content: center; /* Makes sure it stays in the middle */
+  justify-content: center;
   margin-top: 30px;
 }
 
+/* Mobile styles */
 @media (max-width: 700px) {
-  .entry-content {
+  .entry-body {
     flex-direction: column;
     align-items: center;
-    padding: 20px;
+    padding: 0 20px;
   }
 
   .entry-image-frame {
-    order: 1; /* Move image to top of column */
+    order: -1;
     width: 100%;
     max-width: 100%;
-    margin: 20px auto;
-  }
-
-  .entry-image-frame img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: contain;
-    max-height: none; /* Remove cap so it scales naturally */
+    margin-bottom: 20px;
   }
 
   .entry-text {
-    order: 2; /* Text follows image */
-    padding: 0 20px;
-    text-align: left;
     width: 100%;
+    padding: 0;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  .styled-hr {
+    width: 80%;
   }
 }
