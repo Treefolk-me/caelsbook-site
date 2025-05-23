@@ -89,25 +89,6 @@ h1 {
   overflow: hidden; /* Prevents overflow issues */
 }
 
-.entry-image-frame img {
-  width: 100%;
-  height: auto;
-  max-height: 100%;
-  object-fit: contain;
-  display: block;
-  border: 5px solid #5a3e2b;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
-
-.entry-nav {
-  text-align: center; /* Ensure proper alignment */
-  width: 100%; /* Keeps it centered within the page */
-  display: flex;
-  justify-content: center; /* Makes sure it stays in the middle */
-  margin-top: 30px;
-}
-
 @media (max-width: 700px) {
   .entry-content {
     flex-direction: column;
@@ -131,4 +112,23 @@ h1 {
     padding: 0 20px;
     text-align: left;
   }
+}
+
+.entry-image-frame img {
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+  border: 5px solid #5a3e2b;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.entry-nav {
+  text-align: center; /* Ensure proper alignment */
+  width: 100%; /* Keeps it centered within the page */
+  display: flex;
+  justify-content: center; /* Makes sure it stays in the middle */
+  margin-top: 30px;
 }
