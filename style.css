@@ -76,20 +76,24 @@ h1 {
 }
 
 .entry-image-frame {
-  flex: 1;
-  min-width: 250px;
-  max-width: 1024px;
-  padding: 20px;
+  flex: none; /* Prevents flex from automatically stretching */
+  width: auto;
+  height: auto; /* Ensures the frame only matches the image size */
+  padding: 10px; /* Adjust padding as needed */
   border: 4px double #5a3e2b;
   background-color: #f3e8ce;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start; /* Keeps the image aligned to the top */
+  position: absolute; /* Fix the position */
+  top: 40px; /* Adjust vertical positioning */
+  right: 80px; /* Adjust horizontal positioning */
 }
 
 .entry-image-frame img {
   max-width: 100%;
   height: auto;
+  display: block; /* Prevents extra spacing issues */
 }
 
 .entry-nav {
